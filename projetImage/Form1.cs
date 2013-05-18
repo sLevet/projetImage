@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace projetImage
 {
     public partial class Form1 : Form
@@ -14,19 +15,20 @@ namespace projetImage
         //******************************************************
         // vars
         //*****************************************************
-        Bitmap map;
-        System.Drawing.Image Origin;
+        FilesFunctions fileF = new FilesFunctions();        // save / load files
 
         public Form1()
         {
             InitializeComponent();
+            
         }
         //*******************************************************
         // buttons
         //***********************************************************
         private void button_loadPicture_Click(object sender, EventArgs e)
         {
-            LoadImage();
+            fileF.LoadImage(pictureBox1);
+            
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,7 @@ namespace projetImage
         //
         // load image from file
         //
+        /*
         public void LoadImage()
         {
             OpenFileDialog op = new OpenFileDialog();
@@ -53,6 +56,8 @@ namespace projetImage
                 Origin = pictureBox1.Image;
             }
         }
+         */
+
         //
         // save image in local folder. Save in png format, our choice ( png is loseless and free ! )
         //
