@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabasePictureModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DatabasePictureModelStoreContainer">
+    <EntitySet Name="pictures" EntityType="DatabasePictureModel.Store.pictures" store:Type="Tables" />
+    <EntitySet Name="sketch" EntityType="DatabasePictureModel.Store.sketch" store:Type="Tables" />
+    <AssociationSet Name="picture_sketch" Association="DatabasePictureModel.Store.picture_sketch">
+      <End Role="pictures" EntitySet="pictures" />
+      <End Role="sketch" EntitySet="sketch" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="pictures">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="pict_field" Type="image" />
+  </EntityType>
+  <EntityType Name="sketch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_picture" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="picture_sketch">
+    <End Role="pictures" Type="DatabasePictureModel.Store.pictures" Multiplicity="1" />
+    <End Role="sketch" Type="DatabasePictureModel.Store.sketch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pictures">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sketch">
+        <PropertyRef Name="fk_picture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

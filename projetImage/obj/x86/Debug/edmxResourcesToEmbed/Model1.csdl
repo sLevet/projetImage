@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabasePictureModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DatabasePictureEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pictures" EntityType="DatabasePictureModel.pictures" />
+    <EntitySet Name="sketch" EntityType="DatabasePictureModel.sketch" />
+    <AssociationSet Name="picture_sketch" Association="DatabasePictureModel.picture_sketch">
+      <End Role="pictures" EntitySet="pictures" />
+      <End Role="sketch" EntitySet="sketch" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="pictures">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="pict_field" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="sketch" Relationship="DatabasePictureModel.picture_sketch" FromRole="pictures" ToRole="sketch" />
+  </EntityType>
+  <EntityType Name="sketch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fk_picture" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pictures" Relationship="DatabasePictureModel.picture_sketch" FromRole="sketch" ToRole="pictures" />
+  </EntityType>
+  <Association Name="picture_sketch">
+    <End Role="pictures" Type="DatabasePictureModel.pictures" Multiplicity="1" />
+    <End Role="sketch" Type="DatabasePictureModel.sketch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pictures">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sketch">
+        <PropertyRef Name="fk_picture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

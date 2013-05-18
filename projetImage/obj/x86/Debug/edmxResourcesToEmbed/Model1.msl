@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabasePictureModelStoreContainer" CdmEntityContainer="DatabasePictureEntities">
+    <EntitySetMapping Name="pictures">
+      <EntityTypeMapping TypeName="DatabasePictureModel.pictures">
+        <MappingFragment StoreEntitySet="pictures">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pict_field" ColumnName="pict_field" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sketch">
+      <EntityTypeMapping TypeName="DatabasePictureModel.sketch">
+        <MappingFragment StoreEntitySet="sketch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="fk_picture" ColumnName="fk_picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
