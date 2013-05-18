@@ -19,19 +19,23 @@ namespace projetImage
         //******************************************************
         // vars
         //*****************************************************
-        FilesFunctions fileF = new FilesFunctions();        // save / load files
+        FilesFunctions fileF ;        // save / load files
 
         public Form1()
         {
             InitializeComponent();
-            
+            fileF = new FilesFunctions();            
+        }
+        public PictureBox getPictureBox()
+        {
+            return pictureBox1;
         }
         //*******************************************************
         // buttons
         //***********************************************************
         private void button_loadPicture_Click(object sender, EventArgs e)
         {
-            fileF.LoadImage(pictureBox1);
+            fileF.LoadImageFromFile(pictureBox1);
             
         }
         private void button_save_Click(object sender, EventArgs e)
@@ -42,6 +46,11 @@ namespace projetImage
         private void button_saveInDb_Click(object sender, EventArgs e)
         {
             fileF.SaveImageInDb(pictureBox1, textBox1);
+        }
+
+        private void button_loadFromDB_Click(object sender, EventArgs e)
+        {
+            fileF.prepareLoadImageFromDb(pictureBox1);
         }
 
         

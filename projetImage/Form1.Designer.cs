@@ -33,13 +33,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_save = new System.Windows.Forms.Button();
             this.button_saveInDb = new System.Windows.Forms.Button();
-            this.button_exportFromDB = new System.Windows.Forms.Button();
+            this.button_loadFromDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_loadPicture
             // 
-            this.button_loadPicture.Location = new System.Drawing.Point(963, 82);
+            this.button_loadPicture.Location = new System.Drawing.Point(967, 32);
             this.button_loadPicture.Name = "button_loadPicture";
             this.button_loadPicture.Size = new System.Drawing.Size(75, 23);
             this.button_loadPicture.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(967, 137);
+            this.button_save.Location = new System.Drawing.Point(967, 105);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // button_saveInDb
             // 
-            this.button_saveInDb.Location = new System.Drawing.Point(971, 256);
+            this.button_saveInDb.Location = new System.Drawing.Point(967, 143);
             this.button_saveInDb.Name = "button_saveInDb";
             this.button_saveInDb.Size = new System.Drawing.Size(75, 23);
             this.button_saveInDb.TabIndex = 4;
@@ -82,21 +82,22 @@
             this.button_saveInDb.UseVisualStyleBackColor = true;
             this.button_saveInDb.Click += new System.EventHandler(this.button_saveInDb_Click);
             // 
-            // button_exportFromDB
+            // button_loadFromDB
             // 
-            this.button_exportFromDB.Location = new System.Drawing.Point(971, 306);
-            this.button_exportFromDB.Name = "button_exportFromDB";
-            this.button_exportFromDB.Size = new System.Drawing.Size(75, 23);
-            this.button_exportFromDB.TabIndex = 5;
-            this.button_exportFromDB.Text = "export from DB";
-            this.button_exportFromDB.UseVisualStyleBackColor = true;
+            this.button_loadFromDB.Location = new System.Drawing.Point(967, 253);
+            this.button_loadFromDB.Name = "button_loadFromDB";
+            this.button_loadFromDB.Size = new System.Drawing.Size(75, 23);
+            this.button_loadFromDB.TabIndex = 5;
+            this.button_loadFromDB.Text = "Load from DB";
+            this.button_loadFromDB.UseVisualStyleBackColor = true;
+            this.button_loadFromDB.Click += new System.EventHandler(this.button_loadFromDB_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 504);
-            this.Controls.Add(this.button_exportFromDB);
+            this.Controls.Add(this.button_loadFromDB);
             this.Controls.Add(this.button_saveInDb);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.textBox1);
@@ -117,7 +118,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_saveInDb;
-        private System.Windows.Forms.Button button_exportFromDB;
+        private System.Windows.Forms.Button button_loadFromDB;
     }
 }
 
