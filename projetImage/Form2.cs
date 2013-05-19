@@ -11,14 +11,14 @@ namespace projetImage
 {
     public partial class Form2 : Form
     {
-        FilesFunctions fileF ;        // save / load files
-        PictureBox pictureBox1;
+        FunctionsDb fDb ;        // save / load files
+        //PictureBox pictureBox1;
 
-        public Form2(FilesFunctions fileF, PictureBox pictureBox1)
+        public Form2(FunctionsDb fDb)
         {
             InitializeComponent();
-            this.fileF = fileF;
-            this.pictureBox1 = pictureBox1;
+            this.fDb = fDb;
+            //this.pictureBox1 = pictureBox1;
         }
         //
         // Return combox box. Used in files fonctions to set name and see selection
@@ -40,7 +40,7 @@ namespace projetImage
         private void button_loadImage_Click(object sender, EventArgs e)
         {
             string msg = comboBox_name.Text;
-            fileF.loadImageFromDb(msg,pictureBox1);
+            fDb.loadImageFromDb(msg);
             this.Close();
         }
     }

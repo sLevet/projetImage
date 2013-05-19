@@ -2,42 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-using System.IO;
-using System.Data.SqlServerCe;
-using System.Configuration;
 
 namespace projetImage
 {
-    public class FilesFunctions 
+    public class FunctionsDb
     {
         //
         // vars
         //
-        private Bitmap map;
+        private Form1 form1;
         private System.Drawing.Image Origin;
-        private string connectString = "Data Source=WIN-GS9GMUJITS8;Initial Catalog=BDPicture;Integrated Security=True";    // path
+        private string connectString = "Data Source=WIN-GS9GMUJITS8;Initial Catalog=BDPicture;Integrated Security=True";    // path for DB
         private string query;           // query for sql request
         //
-        // load image from file
+        //  Constructor. I use form1 to get/set textbox, pictureBox, .....
         //
-        public void LoadImageFromFile(PictureBox pictureBox1)
+        public FunctionsDb(Form1 form1)
         {
-            OpenFileDialog op = new OpenFileDialog();
-            DialogResult dr = op.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                string path = op.FileName;
-                pictureBox1.Load(path);
-                Bitmap temp = new Bitmap(pictureBox1.Image,
-                   new Size(pictureBox1.Width, pictureBox1.Height));
-                pictureBox1.Image = temp;
-                map = new Bitmap(pictureBox1.Image);
-                Origin = pictureBox1.Image;
-            }
+            this.form1 = form1;
         }
         //
         //  Force a name if nothing writed in name's field (used for save folder and DB)
@@ -50,23 +37,6 @@ namespace projetImage
             }
             return name;
         }
-        //
-        // save image in local folder. Save in png format, our choice ( png is losseless and free ! )
-        //
-        public void SaveImage(PictureBox pictureBox1, TextBox textBox1)
-        {
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            FolderBrowserDialog fl = new FolderBrowserDialog();
-            // I force a name if nothing writed in name's field
-            textBox1.Text = CheckName(textBox1.Text);
-           
-            if (fl.ShowDialog() != DialogResult.Cancel)
-            {
-                pictureBox1.Image.Save(fl.SelectedPath + @"\" + textBox1.Text + @".png", System.Drawing.Imaging.ImageFormat.Png);
-            }
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-
         //
         // This method convert a picture --> byte[] , I use it to store a picture in my DB
         // thanxs to Rajan Tawate (http://www.codeproject.com/Articles/15460/C-Image-to-Byte-Array-and-Byte-Array-to-Image-Conv) for this method !
@@ -91,13 +61,13 @@ namespace projetImage
         //
         // Save image in DB
         //
-        public void SaveImageInDb(PictureBox pictureBox1, TextBox textBox1)
+        public void SaveImageInDb()
         {
             // I force a name if nothing writed in name's field
-            textBox1.Text = CheckName(textBox1.Text);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            form1.getTextBox().Text = CheckName(form1.getTextBox().Text);
+            form1.getPictureBox().SizeMode = PictureBoxSizeMode.AutoSize;
             //Image im = pictureBox1.Image;
-            byte[] tab = imageToByteArray(pictureBox1.Image);
+            byte[] tab = imageToByteArray(form1.getPictureBox().Image);
             SqlConnection cn = new SqlConnection();             // connection for sql
             try
             {
@@ -108,12 +78,10 @@ namespace projetImage
                 query = "INSERT INTO T_pictures (name, pict_field) VALUES  (@name, @picture) ";
                 SqlCommand cmd = new SqlCommand(query, cn);
 
-                cmd.Parameters.AddWithValue("@name", textBox1.Text);
+                cmd.Parameters.AddWithValue("@name", form1.getTextBox().Text);
                 cmd.Parameters.AddWithValue("@picture", tab);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
-
-                MessageBox.Show("nice !");
                 cn.Close();
             }
             catch (Exception e)
@@ -121,12 +89,12 @@ namespace projetImage
                 MessageBox.Show("Sorry, not stored !!! " + e.ToString());
                 cn.Close();
             }
-            
+
         }
         //
         // Prepare to load a picture from DB. Used to export file
         //
-        public void prepareLoadImageFromDb(PictureBox pictureBox1)
+        public void prepareLoadImageFromDb()
         {
             List<String> listPicturesName = new List<string>();         // store pictures' names and ids
             // first I load and check if pictures are present in DB
@@ -144,11 +112,11 @@ namespace projetImage
                 SqlDataReader RS = stmt.ExecuteReader();
                 while (RS.Read())
                 {
-                    name =((string)RS["name"]);
+                    name = ((string)RS["name"]);
                     id = ((int)RS["id"]);
                     temp = id + "_" + name;
                     listPicturesName.Add(temp);
-                   
+
                 }
                 cn.Close();
                 //MessageBox.Show("nice !"+temp);
@@ -165,7 +133,7 @@ namespace projetImage
                 return;
             }
             // create a new form with picture's names. This allow to use same vars in form2
-            Form2 form2 = new Form2(this, pictureBox1);
+            Form2 form2 = new Form2(this);
             form2.Show();
             // fill combo list and select a default value
             string[] tabName = new string[listPicturesName.Count()];
@@ -181,12 +149,12 @@ namespace projetImage
         //
         // Load a picture from DB. Used to export file
         //
-        public void loadImageFromDb(string msg,PictureBox pictureBox1)
+        public void loadImageFromDb(string msg)
         {
             byte[] byteArray = null;
             // extract substring with picture id and cast in int
             string stringIdImage = "";
-            int stopPos =msg.IndexOf('_');
+            int stopPos = msg.IndexOf('_');
             stringIdImage = msg.Substring(0, stopPos);
             int idImage = int.Parse(stringIdImage);
 
@@ -208,7 +176,7 @@ namespace projetImage
                 }
                 cn.Close();
                 Image img = byteArrayToImage(byteArray);
-                pictureBox1.Image = img;
+                form1.getPictureBox().Image = img;
                 //MessageBox.Show("message : " + stringIdImage + "****");
             }
             catch (Exception e)
