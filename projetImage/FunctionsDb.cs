@@ -10,13 +10,18 @@ using System.Data;
 
 namespace projetImage
 {
+    //
+    // In this class : functions to store and get pictures in dataBase. 
+    // Based on sql server (not sql express !!). Adapte var "connectString" for your DB. 
+    // Created and updated by  LEST 
+    //
     public class FunctionsDb
     {
         //
         // vars
         //
         private Form1 form1;
-        private System.Drawing.Image Origin;
+        private FunctionsFile fFile;
         private string connectString = "Data Source=WIN-GS9GMUJITS8;Initial Catalog=BDPicture;Integrated Security=True";    // path for DB
         private string query;           // query for sql request
         //
@@ -65,8 +70,6 @@ namespace projetImage
         {
             // I force a name if nothing writed in name's field
             form1.getTextBox().Text = CheckName(form1.getTextBox().Text);
-            form1.getPictureBox().SizeMode = PictureBoxSizeMode.AutoSize;
-            //Image im = pictureBox1.Image;
             byte[] tab = imageToByteArray(form1.getPictureBox().Image);
             SqlConnection cn = new SqlConnection();             // connection for sql
             try
@@ -94,8 +97,9 @@ namespace projetImage
         //
         // Prepare to load a picture from DB. Used to export file
         //
-        public void prepareLoadImageFromDb()
+        public void prepareLoadImageFromDb(FunctionsFile fFile)
         {
+            this.fFile = fFile;
             List<String> listPicturesName = new List<string>();         // store pictures' names and ids
             // first I load and check if pictures are present in DB
             SqlConnection cn = new SqlConnection();             // connection for sql
@@ -176,8 +180,7 @@ namespace projetImage
                 }
                 cn.Close();
                 Image img = byteArrayToImage(byteArray);
-                form1.getPictureBox().Image = img;
-                //MessageBox.Show("message : " + stringIdImage + "****");
+                fFile.LoadImageFromDb(img);         // class fFile adjust picture and fill pictureBox.
             }
             catch (Exception e)
             {

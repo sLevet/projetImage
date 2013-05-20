@@ -7,6 +7,10 @@ using System.Windows.Forms;
 
 namespace projetImage
 {
+    //
+    // In this class : functions to store and get pictures in folders. 
+    // Created and updated by LEST 5/13
+    //
     public class FunctionsFile
     {
          //
@@ -14,7 +18,7 @@ namespace projetImage
         //
         private Form1 form1;
         private Bitmap map;
-        private System.Drawing.Image Origin;
+        private System.Drawing.Image origin;
         //
         //  Constructor. I use form1 to get/set textbox, pictureBox, .....
         //
@@ -31,15 +35,17 @@ namespace projetImage
             {
                 OpenFileDialog op = new OpenFileDialog();
                 DialogResult dr = op.ShowDialog();
+                form1.reloadOriginalDimPictureBox1();   // resize picture box
                 if (dr == DialogResult.OK)
                 {
                     string path = op.FileName;
-                    form1.getPictureBox().Load(path);
-                    Bitmap temp = new Bitmap(form1.getPictureBox().Image,
-                                        new Size(form1.getPictureBox().Width, form1.getPictureBox().Height));
-                    form1.getPictureBox().Image = temp;
-                    map = new Bitmap(form1.getPictureBox().Image);
-                    Origin = form1.getPictureBox().Image;
+                    form1.getPictureBox().Load(path);                           // img loaded in pictureBox in format .XXX
+                    // change img in .bmp and store original image 
+                    Bitmap temp = new Bitmap(form1.getPictureBox().Image);      // temp = img.bmp
+                    form1.getPictureBox().Image = temp;                         // pictureBox image in format.bmp
+                    map = new Bitmap(form1.getPictureBox().Image);              // map = img.bmp
+                    origin = form1.getPictureBox().Image;                       // origne = img.bmp
+                    
                 }
             }
             catch (Exception e)
@@ -47,6 +53,28 @@ namespace projetImage
                 MessageBox.Show("Sorry, error in load image " + e.ToString());
             }
             
+        }
+        //
+        // load image from db export
+        //
+        public void LoadImageFromDb(Image img)
+        {
+            try
+            {
+                form1.reloadOriginalDimPictureBox1();   // resize picture box
+                form1.getPictureBox().Image = img;                          // img loaded in pictureBox in format .XXX
+                // change img in .bmp and store original image 
+                Bitmap temp = new Bitmap(form1.getPictureBox().Image);      // temp = img.bmp
+                form1.getPictureBox().Image = temp;                         // pictureBox image in format.bmp
+                map = new Bitmap(form1.getPictureBox().Image);              // map = img.bmp
+                origin = form1.getPictureBox().Image;                       // origne = img.bmp
+                form1.checkImageDim();                                      // resize pictureBox
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Sorry, error in load image " + e.ToString());
+            }
+
         }
         //
         //  Force a name if nothing writed in name's field (used for save folder and DB)
@@ -72,17 +100,15 @@ namespace projetImage
             }
             try
             {
-               
-                form1.getPictureBox().SizeMode = PictureBoxSizeMode.AutoSize;
                 FolderBrowserDialog fl = new FolderBrowserDialog();
                 // I force a name if nothing writed in name's field
                 form1.getTextBox().Text = CheckName(form1.getTextBox().Text);
-
+               
                 if (fl.ShowDialog() != DialogResult.Cancel)
                 {
+                    MessageBox.Show(fl.SelectedPath.ToString());
                     form1.getPictureBox().Image.Save(fl.SelectedPath + @"\" + form1.getTextBox().Text + @".png", System.Drawing.Imaging.ImageFormat.Png);
                 }
-                form1.getPictureBox().SizeMode = PictureBoxSizeMode.StretchImage;
             }
             catch (Exception e)
             {

@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace projetImage
 {
+    //
+    // This form to load img name and img from DB in pictureBox. Allow exportation to a folder.
+    // Created and updated by LEST 5/13
+    //
     public partial class Form2 : Form
     {
-        FunctionsDb fDb ;        // save / load files
-        //PictureBox pictureBox1;
-
+        FunctionsDb fDb ;        // save / load to db
+       
         public Form2(FunctionsDb fDb)
         {
             InitializeComponent();
             this.fDb = fDb;
-            //this.pictureBox1 = pictureBox1;
         }
         //
         // Return combox box. Used in files fonctions to set name and see selection
