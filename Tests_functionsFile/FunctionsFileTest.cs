@@ -98,12 +98,10 @@ namespace Tests_functionsFile
         {
             var msg = "init";
             var fFile = Substitute.For<I_FunctionsFile>();
-             
             // I test catch part
             fFile
                     .When(x => x.LoadImageFromFile())
                     .Do(x => { throw new Exception("Simule a fail"); });
-            
             try 
             {
                 fFile.LoadImageFromFile();

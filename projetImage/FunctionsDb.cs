@@ -15,7 +15,7 @@ namespace projetImage
     // Based on sql server (not sql express !!). Adapte var "connectString" for your DB. 
     // Created and updated by  LEST 
     //
-    public class FunctionsDb
+    public class FunctionsDb : I_FunctionsDb
     {
         //
         // vars
@@ -34,7 +34,7 @@ namespace projetImage
         //
         //  Force a name if nothing writed in name's field (used for save folder and DB)
         //
-        public String CheckName(String name)
+        public String checkName(String name)
         {
             if (name.Length == 0)
             {
@@ -69,7 +69,7 @@ namespace projetImage
         public void SaveImageInDb()
         {
             // I force a name if nothing writed in name's field
-            form1.getTextBox().Text = CheckName(form1.getTextBox().Text);
+            form1.getTextBox().Text = checkName(form1.getTextBox().Text);
             byte[] tab = imageToByteArray(form1.getPictureBox().Image);
             SqlConnection cn = new SqlConnection();             // connection for sql
             try

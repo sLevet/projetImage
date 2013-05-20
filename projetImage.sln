@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_functionsDb", "Test_functionsDb\Test_functionsDb.csproj", "{CD635149-0740-4EA2-943A-8B4ACF8D10BF}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = projetImage.vsmdi
@@ -45,6 +47,16 @@ Global
 		{2C2CD975-C1E4-4CD0-85B5-A8DB6D873512}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2C2CD975-C1E4-4CD0-85B5-A8DB6D873512}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2C2CD975-C1E4-4CD0-85B5-A8DB6D873512}.Release|x86.ActiveCfg = Release|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CD635149-0740-4EA2-943A-8B4ACF8D10BF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

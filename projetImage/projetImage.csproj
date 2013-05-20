@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="FunctionsDb.cs" />
     <Compile Include="FunctionsFile.cs" />
+    <Compile Include="I_FunctionsDb.cs" />
     <Compile Include="I_FunctionsFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
