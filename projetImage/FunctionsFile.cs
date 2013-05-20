@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
 
 namespace projetImage
 {
@@ -11,7 +13,7 @@ namespace projetImage
     // In this class : functions to store and get pictures in folders. 
     // Created and updated by LEST 5/13
     //
-    public class FunctionsFile
+    public class FunctionsFile : I_FunctionsFile
     {
          //
         // vars
@@ -26,6 +28,7 @@ namespace projetImage
         {
             this.form1 = form1;
         }
+        //public FunctionsFile() { }
         //
         // load image from file
         //
@@ -54,6 +57,7 @@ namespace projetImage
             }
             
         }
+        
         //
         // load image from db export
         //
