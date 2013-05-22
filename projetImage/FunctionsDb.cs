@@ -24,23 +24,13 @@ namespace projetImage
         private FunctionsFile fFile;
         private string connectString = "Data Source=WIN-GS9GMUJITS8;Initial Catalog=BDPicture;Integrated Security=True";    // path for DB
         private string query;           // query for sql request
+        private SqlDataReader rs;
         //
         //  Constructor. I use form1 to get/set textbox, pictureBox, .....
         //
         public FunctionsDb(Form1 form1)
         {
             this.form1 = form1;
-        }
-        //
-        //  Force a name if nothing writed in name's field (used for save folder and DB)
-        //
-        public String checkName(String name)
-        {
-            if (name.Length == 0)
-            {
-                return "no_name";
-            }
-            return name;
         }
         //
         // This method convert a picture --> byte[] , I use it to store a picture in my DB
@@ -66,10 +56,9 @@ namespace projetImage
         //
         // Save image in DB
         //
-        public void SaveImageInDb()
+        public int SaveImageInDb()
         {
-            // I force a name if nothing writed in name's field
-            form1.getTextBox().Text = checkName(form1.getTextBox().Text);
+           
             byte[] tab = imageToByteArray(form1.getPictureBox().Image);
             SqlConnection cn = new SqlConnection();             // connection for sql
             try
@@ -80,19 +69,31 @@ namespace projetImage
                 // query and parameters
                 query = "INSERT INTO T_pictures (name, pict_field) VALUES  (@name, @picture) ";
                 SqlCommand cmd = new SqlCommand(query, cn);
-
-                cmd.Parameters.AddWithValue("@name", form1.getTextBox().Text);
+                cmd.Parameters.AddWithValue("@name", form1.getTextBox_db().Text);
                 cmd.Parameters.AddWithValue("@picture", tab);
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
+                // now I search last id, used to add sketch and chech in form 1
+                int maxId = -1;
+                query = "SELECT TOP 1 id FROM T_pictures  ORDER BY id DESC";
+                cmd = new SqlCommand(query, cn);
+                SqlDataReader rs = cmd.ExecuteReader();
+                while (rs.Read())
+                {
+                    maxId = ((int)rs["id"]);
+                }
+                rs.Close();
                 cn.Close();
+                MessageBox.Show("Image saved !");
+                return maxId;
             }
             catch (Exception e)
             {
                 MessageBox.Show("Sorry, not stored !!! " + e.ToString());
                 cn.Close();
+                return -1;
             }
-
+            
         }
         //
         // Prepare to load a picture from DB. Used to export file
@@ -113,22 +114,23 @@ namespace projetImage
                 // query and parameters
                 query = "SELECT name, id FROM T_pictures";
                 SqlCommand stmt = new SqlCommand(query, cn);
-                SqlDataReader RS = stmt.ExecuteReader();
-                while (RS.Read())
+                rs = stmt.ExecuteReader();
+                while (rs.Read())
                 {
-                    name = ((string)RS["name"]);
-                    id = ((int)RS["id"]);
+                    name = ((string)rs["name"]);
+                    id = ((int)rs["id"]);
                     temp = id + "_" + name;
                     listPicturesName.Add(temp);
 
                 }
+                rs.Close();
                 cn.Close();
-                //MessageBox.Show("nice !"+temp);
             }
             catch (Exception e)
             {
                 MessageBox.Show("Sorry,not ok !!! " + e.ToString());
                 cn.Close();
+                rs.Close();
             }
             // if list.count = 0 --> no picture ---> display a warning and stop
             if (listPicturesName.Count() == 0)
@@ -173,20 +175,24 @@ namespace projetImage
                 query = "SELECT pict_field FROM T_pictures WHERE id = @id";
                 SqlCommand stmt = new SqlCommand(query, cn);
                 stmt.Parameters.AddWithValue("id", idImage);
-                SqlDataReader RS = stmt.ExecuteReader();
-                while (RS.Read())
+                rs = stmt.ExecuteReader();
+                while (rs.Read())
                 {
-                    byteArray = ((byte[])RS["pict_field"]);
+                    byteArray = ((byte[])rs["pict_field"]);
                 }
+                rs.Close();
                 cn.Close();
                 Image img = byteArrayToImage(byteArray);
                 fFile.LoadImageFromDb(img);         // class fFile adjust picture and fill pictureBox.
+                form1.CurrentIdPicture = idImage;   // set current id in form1, allow to set picture id for sketch
             }
             catch (Exception e)
             {
                 MessageBox.Show("Sorry,not ok !!! " + e.ToString());
+                rs.Close();
                 cn.Close();
             }
         }
+
     }
 }

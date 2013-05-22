@@ -81,6 +81,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_enterName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_enterName.Designer.cs">
+      <DependentUpon>Form_enterName.cs</DependentUpon>
+    </Compile>
     <Compile Include="FunctionsDb.cs" />
     <Compile Include="FunctionsFile.cs" />
     <Compile Include="I_FunctionsDb.cs" />
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_enterName.resx">
+      <DependentUpon>Form_enterName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,7 +152,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="img507x433.png" />
     <Content Include="img\img507x433.png" />
   </ItemGroup>
   <ItemGroup>

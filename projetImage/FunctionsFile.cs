@@ -80,37 +80,20 @@ namespace projetImage
             }
 
         }
-        //
-        //  Force a name if nothing writed in name's field (used for save folder and DB)
-        //
-        public String CheckName(String name)
-        {
-            if (name.Length == 0)
-            {
-                return "no_name";
-            }
-            return name;
-        }
+        
         //
         // save image in local folder. Save in png format, our choice ( png is losseless and free ! )
         //
         public void SaveImage()
         {
-            // if no image selected, nothing saved and exit
-            if(form1.getPictureBox().Image == null)
-            {
-                MessageBox.Show("No image loaded !!!");
-                return;
-            }
+            
             try
             {
                 FolderBrowserDialog fl = new FolderBrowserDialog();
-                // I force a name if nothing writed in name's field
-                form1.getTextBox().Text = CheckName(form1.getTextBox().Text);
                
                 if (fl.ShowDialog() != DialogResult.Cancel)
                 {
-                    MessageBox.Show(fl.SelectedPath.ToString());
+                    MessageBox.Show("Saved in : "+fl.SelectedPath.ToString());
                     form1.getPictureBox().Image.Save(fl.SelectedPath + @"\" + form1.getTextBox().Text + @".png", System.Drawing.Imaging.ImageFormat.Png);
                 }
             }

@@ -34,12 +34,24 @@
             this.button_save = new System.Windows.Forms.Button();
             this.button_saveInDb = new System.Windows.Forms.Button();
             this.button_loadFromDB = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_createSketch = new System.Windows.Forms.Button();
+            this.button_loadSketch = new System.Windows.Forms.Button();
+            this.textBox_db = new System.Windows.Forms.TextBox();
+            this.button_saveSketch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_loadPicture
             // 
-            this.button_loadPicture.Location = new System.Drawing.Point(967, 32);
+            this.button_loadPicture.Location = new System.Drawing.Point(6, 19);
             this.button_loadPicture.Name = "button_loadPicture";
             this.button_loadPicture.Size = new System.Drawing.Size(75, 23);
             this.button_loadPicture.TabIndex = 0;
@@ -54,19 +66,20 @@
             this.pictureBox1.Size = new System.Drawing.Size(518, 446);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(953, 172);
+            this.textBox1.Location = new System.Drawing.Point(721, 86);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(162, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(967, 105);
+            this.button_save.Location = new System.Drawing.Point(133, 19);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.Size = new System.Drawing.Size(94, 23);
             this.button_save.TabIndex = 3;
             this.button_save.Text = "save";
             this.button_save.UseVisualStyleBackColor = true;
@@ -74,39 +87,132 @@
             // 
             // button_saveInDb
             // 
-            this.button_saveInDb.Location = new System.Drawing.Point(967, 143);
+            this.button_saveInDb.Location = new System.Drawing.Point(6, 48);
             this.button_saveInDb.Name = "button_saveInDb";
-            this.button_saveInDb.Size = new System.Drawing.Size(75, 23);
+            this.button_saveInDb.Size = new System.Drawing.Size(81, 23);
             this.button_saveInDb.TabIndex = 4;
-            this.button_saveInDb.Text = "save in DB";
+            this.button_saveInDb.Text = "save picture";
             this.button_saveInDb.UseVisualStyleBackColor = true;
             this.button_saveInDb.Click += new System.EventHandler(this.button_saveInDb_Click);
             // 
             // button_loadFromDB
             // 
-            this.button_loadFromDB.Location = new System.Drawing.Point(967, 253);
+            this.button_loadFromDB.Location = new System.Drawing.Point(6, 19);
             this.button_loadFromDB.Name = "button_loadFromDB";
             this.button_loadFromDB.Size = new System.Drawing.Size(75, 23);
             this.button_loadFromDB.TabIndex = 5;
-            this.button_loadFromDB.Text = "Load from DB";
+            this.button_loadFromDB.Text = "Load picture";
             this.button_loadFromDB.UseVisualStyleBackColor = true;
             this.button_loadFromDB.Click += new System.EventHandler(this.button_loadFromDB_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button_loadPicture);
+            this.groupBox1.Controls.Add(this.button_save);
+            this.groupBox1.Location = new System.Drawing.Point(633, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(261, 58);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Folder access";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(646, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Name : ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.button_saveSketch);
+            this.groupBox2.Controls.Add(this.textBox_db);
+            this.groupBox2.Controls.Add(this.button_loadSketch);
+            this.groupBox2.Controls.Add(this.button_saveInDb);
+            this.groupBox2.Controls.Add(this.button_loadFromDB);
+            this.groupBox2.Location = new System.Drawing.Point(615, 144);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(321, 123);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "DB access";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button_createSketch);
+            this.groupBox3.Location = new System.Drawing.Point(621, 361);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(336, 97);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Sketch";
+            // 
+            // button_createSketch
+            // 
+            this.button_createSketch.Location = new System.Drawing.Point(12, 31);
+            this.button_createSketch.Name = "button_createSketch";
+            this.button_createSketch.Size = new System.Drawing.Size(98, 23);
+            this.button_createSketch.TabIndex = 0;
+            this.button_createSketch.Text = "Create a sketch";
+            this.button_createSketch.UseVisualStyleBackColor = true;
+            this.button_createSketch.Click += new System.EventHandler(this.button_createSketch_Click);
+            // 
+            // button_loadSketch
+            // 
+            this.button_loadSketch.Location = new System.Drawing.Point(106, 19);
+            this.button_loadSketch.Name = "button_loadSketch";
+            this.button_loadSketch.Size = new System.Drawing.Size(86, 23);
+            this.button_loadSketch.TabIndex = 1;
+            this.button_loadSketch.Text = "Load  sketch";
+            this.button_loadSketch.UseVisualStyleBackColor = true;
+            // 
+            // textBox_db
+            // 
+            this.textBox_db.Location = new System.Drawing.Point(106, 87);
+            this.textBox_db.Name = "textBox_db";
+            this.textBox_db.Size = new System.Drawing.Size(187, 20);
+            this.textBox_db.TabIndex = 6;
+            // 
+            // button_saveSketch
+            // 
+            this.button_saveSketch.Location = new System.Drawing.Point(117, 48);
+            this.button_saveSketch.Name = "button_saveSketch";
+            this.button_saveSketch.Size = new System.Drawing.Size(75, 23);
+            this.button_saveSketch.TabIndex = 7;
+            this.button_saveSketch.Text = "Save sketch";
+            this.button_saveSketch.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Name : ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 504);
-            this.Controls.Add(this.button_loadFromDB);
-            this.Controls.Add(this.button_saveInDb);
-            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button_loadPicture);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +226,15 @@
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_saveInDb;
         private System.Windows.Forms.Button button_loadFromDB;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button_loadSketch;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button_createSketch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_saveSketch;
+        private System.Windows.Forms.TextBox textBox_db;
     }
 }
 

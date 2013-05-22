@@ -160,19 +160,6 @@ namespace Test_functionsDb
             Assert.AreEqual("try", msg);
         }
 
-        /// <summary>
-        ///A test for checkName
-        ///</summary>
-        [TestMethod()]
-        public void checkNameTest_bothPossibility()
-        {
-            var fDb = Substitute.For<I_FunctionsDb>();
-            // if name --> same name
-            fDb.checkName("toto").Returns("toto");
-            Assert.AreEqual("toto", fDb.checkName("toto"));
-            // if noName --> no_name
-            fDb.checkName("").Returns("no_name");
-            Assert.AreEqual(fDb.checkName("no_name"),"");
-        }
+        
     }
 }

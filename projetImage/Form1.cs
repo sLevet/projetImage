@@ -19,22 +19,36 @@ namespace projetImage
         //******************************************************
         // vars
         //*****************************************************
-        private FunctionsFile fFile ;        // save / load in files
-        private FunctionsDb fDb;             // save / load in Db
+        private FunctionsFile fFile ;       // save / load in files
+        private FunctionsDb fDb;            // save / load in Db
         private int widthPBox1;             // fix picture box size
         private int heightPBox1;
+        private int currentIdPicture;       // used for db access and check
+        private int currentIdSketch;        // used for db access and check
         // constructor
         public Form1()
         {
             InitializeComponent();
+            currentIdPicture = -1;  // -1 --> not selected
+            currentIdSketch = -1;   // -1 --> not selected
             fFile = new FunctionsFile(this);
             fDb = new FunctionsDb(this);
             widthPBox1 = pictureBox1.Width;
             heightPBox1 = pictureBox1.Height;
         }
-        //
+        //****************************************************************
         // Getters and setters
-        //
+        //****************************************************************
+        public int CurrentIdSketch
+        {
+            get { return currentIdSketch; }
+            set { currentIdSketch = value; }
+        }
+        public int CurrentIdPicture
+        {
+            get { return currentIdPicture; }
+            set { currentIdPicture = value; }
+        }
         public int HeightPBox1
         {
             get { return heightPBox1; }
@@ -53,9 +67,39 @@ namespace projetImage
         {
             return textBox1;
         }
+        public TextBox getTextBox_db()
+        {
+            return textBox_db;
+        }
         //***********************************************************
         // functions
         //***********************************************************
+
+        //
+        // Check if picture or sketch present
+        //
+        public Boolean checkPicture(Image img)
+        {
+            // if no image selected, nothing saved and exit
+            if (img == null)
+            {
+                MessageBox.Show("No image loaded !!!");
+                return false;
+            }
+            return true;
+        }
+        //
+        //  Check name , a name must be present (used for save folder and DB)
+        //
+        public Boolean checkName(String name)
+        {
+            if (name.Length == 0)
+            {
+                MessageBox.Show("No name, write one !");
+                return false;
+            }
+            return true;
+        }
         //
         // dims can change after a picture. This method reload default values. LEST 20/5/13
         //
@@ -91,12 +135,34 @@ namespace projetImage
         }
         private void button_save_Click(object sender, EventArgs e)
         {
+            // no name --> end
+            if ( ! checkName(textBox1.Text) )
+            {
+                return;
+            }
+            // no picture --> end
+            if ( !checkPicture(pictureBox1.Image))
+            {
+                return;
+            }
             fFile.SaveImage();
+            textBox1.Text = "";
 
         }
         private void button_saveInDb_Click(object sender, EventArgs e)
         {
-            fDb.SaveImageInDb();
+            // no name --> end
+            if (!checkName(textBox_db.Text))
+            {
+                return;
+            }
+            // no picture --> end
+            if (!checkPicture(pictureBox1.Image))
+            {
+                return;
+            }
+            currentIdPicture = fDb.SaveImageInDb();
+            textBox_db.Text = "";
         }
 
         private void button_loadFromDB_Click(object sender, EventArgs e)
@@ -109,6 +175,22 @@ namespace projetImage
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_createSketch_Click(object sender, EventArgs e)
+        {
+            // first image must be saved in Db ( your choice )
+            if (currentIdPicture == -1)
+            {
+                MessageBox.Show("Save picture in data base !");
+                return;
+            }
+            MessageBox.Show("This part is for you Soraia :)) "+currentIdPicture);
         }
 
      

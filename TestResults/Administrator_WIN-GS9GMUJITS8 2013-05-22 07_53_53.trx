@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6fb12f36-cc1f-416d-ad76-6645e1683e0e" name="Administrator@WIN-GS9GMUJITS8 2013-05-22 07:53:53" runUser="WIN-GS9GMUJITS8\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="6464dd30-2dfc-410c-ba47-2153789fb911">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="Administrator_WIN-GS9GMUJITS8 2013-05-22 07_53_53">
+      <DeploymentItem filename="C:\Users\Administrator\Desktop\projetImage\projetImage\bin\Debug\projetImage.exe" />
+      <DeploymentItem filename="C:\Users\Administrator\Desktop\DayTimeManagement-Exo1\packages\NSubstitute.1.6.0.0\lib\NET40\NSubstitute.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+        <WebAiiTestRunConfig testTypeId="c4241296-3c6e-46b1-bf92-e0bd3e0eb017" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;Settings xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;Web&gt;&#xD;&#xA;    &lt;WebKitExecutionDelay&gt;0&lt;/WebKitExecutionDelay&gt;&#xD;&#xA;    &lt;ExecutingBrowsers&gt;&#xD;&#xA;      &lt;BrowserExecutionType&gt;InternetExplorer&lt;/BrowserExecutionType&gt;&#xD;&#xA;      &lt;BrowserExecutionType&gt;InternetExplorer&lt;/BrowserExecutionType&gt;&#xD;&#xA;      &lt;BrowserExecutionType&gt;InternetExplorer&lt;/BrowserExecutionType&gt;&#xD;&#xA;      &lt;BrowserExecutionType&gt;InternetExplorer&lt;/BrowserExecutionType&gt;&#xD;&#xA;    &lt;/ExecutingBrowsers&gt;&#xD;&#xA;    &lt;UseMultiBrowserExecution&gt;false&lt;/UseMultiBrowserExecution&gt;&#xD;&#xA;    &lt;RecycleBrowser&gt;false&lt;/RecycleBrowser&gt;&#xD;&#xA;    &lt;AspNetDevServerPort&gt;-1&lt;/AspNetDevServerPort&gt;&#xD;&#xA;    &lt;LocalWebServer&gt;None&lt;/LocalWebServer&gt;&#xD;&#xA;    &lt;EnableUILessRequestViewing&gt;false&lt;/EnableUILessRequestViewing&gt;&#xD;&#xA;    &lt;WebAppPhysicalPath /&gt;&#xD;&#xA;    &lt;DefaultBrowser&gt;InternetExplorer&lt;/DefaultBrowser&gt;&#xD;&#xA;    &lt;Browser&gt;InternetExplorer&lt;/Browser&gt;&#xD;&#xA;    &lt;EnableScriptLogging&gt;false&lt;/EnableScriptLogging&gt;&#xD;&#xA;    &lt;BaseUrl /&gt;&#xD;&#xA;    &lt;KillBrowserProcessOnClose&gt;false&lt;/KillBrowserProcessOnClose&gt;&#xD;&#xA;    &lt;UseHttpProxy&gt;false&lt;/UseHttpProxy&gt;&#xD;&#xA;    &lt;EnableSilverlight&gt;false&lt;/EnableSilverlight&gt;&#xD;&#xA;    &lt;VerboseHttpProxy&gt;false&lt;/VerboseHttpProxy&gt;&#xD;&#xA;    &lt;SilverlightConnectTimeout&gt;30000&lt;/SilverlightConnectTimeout&gt;&#xD;&#xA;  &lt;/Web&gt;&#xD;&#xA;  &lt;Wpf&gt;&#xD;&#xA;    &lt;DefaultApplicationPath /&gt;&#xD;&#xA;  &lt;/Wpf&gt;&#xD;&#xA;  &lt;CreateLogFile&gt;true&lt;/CreateLogFile&gt;&#xD;&#xA;  &lt;LogLocation&gt;C:\WebAiiLog\&lt;/LogLocation&gt;&#xD;&#xA;  &lt;QueryEventLogErrorsOnExit&gt;false&lt;/QueryEventLogErrorsOnExit&gt;&#xD;&#xA;  &lt;LogAnnotations&gt;false&lt;/LogAnnotations&gt;&#xD;&#xA;  &lt;SimulatedMouseMoveSpeed&gt;0.3&lt;/SimulatedMouseMoveSpeed&gt;&#xD;&#xA;  &lt;WaitCheckInterval&gt;500&lt;/WaitCheckInterval&gt;&#xD;&#xA;  &lt;ElementWaitTimeout&gt;10000&lt;/ElementWaitTimeout&gt;&#xD;&#xA;  &lt;ExecuteCommandTimeout&gt;20000&lt;/ExecuteCommandTimeout&gt;&#xD;&#xA;  &lt;ExecutionDelay&gt;0&lt;/ExecutionDelay&gt;&#xD;&#xA;  &lt;UnexpectedDialogAction&gt;HandleAndFailTest&lt;/UnexpectedDialogAction&gt;&#xD;&#xA;  &lt;AnnotateExecution&gt;false&lt;/AnnotateExecution&gt;&#xD;&#xA;  &lt;AnnotationMode&gt;All&lt;/AnnotationMode&gt;&#xD;&#xA;  &lt;XMultiMgr&gt;true&lt;/XMultiMgr&gt;&#xD;&#xA;  &lt;ClientReadyTimeout&gt;30000&lt;/ClientReadyTimeout&gt;&#xD;&#xA;&lt;/Settings&gt;" xmlns="http://artoftest.com/schemas/WebAiiDesignCanvas/1.0.0" />
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-05-22T07:53:53.3763066+02:00" queuing="2013-05-22T07:53:53.7312280+02:00" start="2013-05-22T07:53:53.8322854+02:00" finish="2013-05-22T07:53:55.0112884+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoadImageFromFileTestPassTry" storage="c:\users\administrator\desktop\projetimage\tests_functionsfile\bin\debug\tests_functionsfile.dll" id="de489a3b-6c82-6740-f93f-fc1f2a975624">
+      <Execution id="fe5c5484-5328-4e7f-9de7-7c525d42bb33" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Tests_functionsFile/bin/Debug/Tests_functionsFile.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests_functionsFile.FunctionsFileTest, Tests_functionsFile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadImageFromFileTestPassTry" />
+    </UnitTest>
+    <UnitTest name="checkNameTest_bothPossibility" storage="c:\users\administrator\desktop\projetimage\test_functionsdb\bin\debug\test_functionsdb.dll" id="e69343e6-369c-dc3b-f422-d3fdeaf5a4f8">
+      <Execution id="b4251782-00f5-4d6a-9038-2151967ad105" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Test_functionsDb/bin/Debug/Test_functionsDb.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test_functionsDb.FunctionsDbTest, Test_functionsDb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="checkNameTest_bothPossibility" />
+    </UnitTest>
+    <UnitTest name="LoadImageFromFileTestImgLoadedOk" storage="c:\users\administrator\desktop\projetimage\tests_functionsfile\bin\debug\tests_functionsfile.dll" id="78e81568-f394-7fb2-bf85-a7e662ee71d0">
+      <Execution id="649507a3-e1d2-4fd5-8078-a672b5fc43fc" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Tests_functionsFile/bin/Debug/Tests_functionsFile.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests_functionsFile.FunctionsFileTest, Tests_functionsFile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadImageFromFileTestImgLoadedOk" />
+    </UnitTest>
+    <UnitTest name="loadImageFromDbTestSuccess_try" storage="c:\users\administrator\desktop\projetimage\test_functionsdb\bin\debug\test_functionsdb.dll" id="8c5ffd77-682c-977a-8122-3d049d039d60">
+      <Execution id="ff8e0b49-3cbf-4c4b-9e2c-f1b06ecf546c" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Test_functionsDb/bin/Debug/Test_functionsDb.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test_functionsDb.FunctionsDbTest, Test_functionsDb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="loadImageFromDbTestSuccess_try" />
+    </UnitTest>
+    <UnitTest name="SaveImageInDbTestFail_Catch" storage="c:\users\administrator\desktop\projetimage\test_functionsdb\bin\debug\test_functionsdb.dll" id="4e45098c-b167-b6c8-97fc-f775533bcbb9">
+      <Execution id="f613a50c-a231-4939-bd78-4f99c9b2aec7" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Test_functionsDb/bin/Debug/Test_functionsDb.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test_functionsDb.FunctionsDbTest, Test_functionsDb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveImageInDbTestFail_Catch" />
+    </UnitTest>
+    <UnitTest name="LoadImageFromFileTestFailCatch" storage="c:\users\administrator\desktop\projetimage\tests_functionsfile\bin\debug\tests_functionsfile.dll" id="8d917dc5-5805-35cc-762e-6f7de5565b04">
+      <Execution id="b81769de-0f72-4352-b2f4-e559c39bf49d" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Tests_functionsFile/bin/Debug/Tests_functionsFile.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests_functionsFile.FunctionsFileTest, Tests_functionsFile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadImageFromFileTestFailCatch" />
+    </UnitTest>
+    <UnitTest name="loadImageFromDbTestFail_catch" storage="c:\users\administrator\desktop\projetimage\test_functionsdb\bin\debug\test_functionsdb.dll" id="825fcdaf-2655-0db7-be3d-59d587a383c3">
+      <Execution id="850da5be-f7e8-43c5-99c8-12b32e36ddc4" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Test_functionsDb/bin/Debug/Test_functionsDb.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test_functionsDb.FunctionsDbTest, Test_functionsDb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="loadImageFromDbTestFail_catch" />
+    </UnitTest>
+    <UnitTest name="SaveImageInDbTestSuccess_Try" storage="c:\users\administrator\desktop\projetimage\test_functionsdb\bin\debug\test_functionsdb.dll" id="68aa9847-e153-f417-c23a-9e4f8d04f77d">
+      <Execution id="e4882ca5-2646-47f2-8a6b-d9482a84ca8b" />
+      <TestMethod codeBase="C:/Users/Administrator/Desktop/projetImage/Test_functionsDb/bin/Debug/Test_functionsDb.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Test_functionsDb.FunctionsDbTest, Test_functionsDb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SaveImageInDbTestSuccess_Try" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4e45098c-b167-b6c8-97fc-f775533bcbb9" executionId="f613a50c-a231-4939-bd78-4f99c9b2aec7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68aa9847-e153-f417-c23a-9e4f8d04f77d" executionId="e4882ca5-2646-47f2-8a6b-d9482a84ca8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78e81568-f394-7fb2-bf85-a7e662ee71d0" executionId="649507a3-e1d2-4fd5-8078-a672b5fc43fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="825fcdaf-2655-0db7-be3d-59d587a383c3" executionId="850da5be-f7e8-43c5-99c8-12b32e36ddc4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c5ffd77-682c-977a-8122-3d049d039d60" executionId="ff8e0b49-3cbf-4c4b-9e2c-f1b06ecf546c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d917dc5-5805-35cc-762e-6f7de5565b04" executionId="b81769de-0f72-4352-b2f4-e559c39bf49d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de489a3b-6c82-6740-f93f-fc1f2a975624" executionId="fe5c5484-5328-4e7f-9de7-7c525d42bb33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e69343e6-369c-dc3b-f422-d3fdeaf5a4f8" executionId="b4251782-00f5-4d6a-9038-2151967ad105" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f613a50c-a231-4939-bd78-4f99c9b2aec7" testId="4e45098c-b167-b6c8-97fc-f775533bcbb9" testName="SaveImageInDbTestFail_Catch" computerName="WIN-GS9GMUJITS8" duration="00:00:00.2343339" startTime="2013-05-22T07:53:53.8576718+02:00" endTime="2013-05-22T07:53:54.3961564+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f613a50c-a231-4939-bd78-4f99c9b2aec7">
+    </UnitTestResult>
+    <UnitTestResult executionId="e4882ca5-2646-47f2-8a6b-d9482a84ca8b" testId="68aa9847-e153-f417-c23a-9e4f8d04f77d" testName="SaveImageInDbTestSuccess_Try" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0050665" startTime="2013-05-22T07:53:54.4142198+02:00" endTime="2013-05-22T07:53:54.4298422+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4882ca5-2646-47f2-8a6b-d9482a84ca8b">
+    </UnitTestResult>
+    <UnitTestResult executionId="649507a3-e1d2-4fd5-8078-a672b5fc43fc" testId="78e81568-f394-7fb2-bf85-a7e662ee71d0" testName="LoadImageFromFileTestImgLoadedOk" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0970293" startTime="2013-05-22T07:53:54.4308186+02:00" endTime="2013-05-22T07:53:54.6973758+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="649507a3-e1d2-4fd5-8078-a672b5fc43fc">
+    </UnitTestResult>
+    <UnitTestResult executionId="850da5be-f7e8-43c5-99c8-12b32e36ddc4" testId="825fcdaf-2655-0db7-be3d-59d587a383c3" testName="loadImageFromDbTestFail_catch" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0042969" startTime="2013-05-22T07:53:54.6998168+02:00" endTime="2013-05-22T07:53:54.7120218+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="850da5be-f7e8-43c5-99c8-12b32e36ddc4">
+    </UnitTestResult>
+    <UnitTestResult executionId="ff8e0b49-3cbf-4c4b-9e2c-f1b06ecf546c" testId="8c5ffd77-682c-977a-8122-3d049d039d60" testName="loadImageFromDbTestSuccess_try" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0009766" startTime="2013-05-22T07:53:54.7149510+02:00" endTime="2013-05-22T07:53:54.7203212+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff8e0b49-3cbf-4c4b-9e2c-f1b06ecf546c">
+    </UnitTestResult>
+    <UnitTestResult executionId="b81769de-0f72-4352-b2f4-e559c39bf49d" testId="8d917dc5-5805-35cc-762e-6f7de5565b04" testName="LoadImageFromFileTestFailCatch" computerName="WIN-GS9GMUJITS8" duration="00:00:00.1774957" startTime="2013-05-22T07:53:54.7222740+02:00" endTime="2013-05-22T07:53:54.9048608+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b81769de-0f72-4352-b2f4-e559c39bf49d">
+    </UnitTestResult>
+    <UnitTestResult executionId="fe5c5484-5328-4e7f-9de7-7c525d42bb33" testId="de489a3b-6c82-6740-f93f-fc1f2a975624" testName="LoadImageFromFileTestPassTry" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0077166" startTime="2013-05-22T07:53:54.9082782+02:00" endTime="2013-05-22T07:53:54.9209714+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fe5c5484-5328-4e7f-9de7-7c525d42bb33">
+    </UnitTestResult>
+    <UnitTestResult executionId="b4251782-00f5-4d6a-9038-2151967ad105" testId="e69343e6-369c-dc3b-f422-d3fdeaf5a4f8" testName="checkNameTest_bothPossibility" computerName="WIN-GS9GMUJITS8" duration="00:00:00.0068807" startTime="2013-05-22T07:53:54.9253652+02:00" endTime="2013-05-22T07:53:54.9395230+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4251782-00f5-4d6a-9038-2151967ad105">
+    </UnitTestResult>
+  </Results>
+</TestRun>

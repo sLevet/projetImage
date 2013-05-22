@@ -11,7 +11,5 @@ namespace projetImage
         void LoadImageFromFile();
         void SaveImage();
         void LoadImageFromDb(Image img);
-        String CheckName(String name);
-
     }
 }
