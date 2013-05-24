@@ -258,11 +258,6 @@ namespace projetImage
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int sf = 2;
-            sf += 5;
-        }
         /*public void OpenFormLineSize()
         {
             FormSize fs = new FormSize();
