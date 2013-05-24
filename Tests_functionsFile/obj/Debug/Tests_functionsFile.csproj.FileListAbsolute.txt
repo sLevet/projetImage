@@ -7,3 +7,19 @@ C:\Users\Administrator\Desktop\projetImage\Tests_functionsFile\bin\Debug\projetI
 C:\Users\Administrator\Desktop\projetImage\Tests_functionsFile\bin\Debug\NSubstitute.xml
 C:\Users\Administrator\Desktop\projetImage\Tests_functionsFile\obj\Debug\Tests_functionsFile.dll
 C:\Users\Administrator\Desktop\projetImage\Tests_functionsFile\obj\Debug\Tests_functionsFile.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\bin\Debug\Tests_functionsFile.dll
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\bin\Debug\Tests_functionsFile.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\bin\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\bin\Debug\NSubstitute.xml
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\obj\Debug\Tests_functionsFile.dll
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Tests_functionsFile\obj\Debug\Tests_functionsFile.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\bin\Debug\Tests_functionsFile.dll
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\bin\Debug\Tests_functionsFile.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\bin\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\bin\Debug\NSubstitute.xml
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\obj\Debug\Tests_functionsFile.dll
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Tests_functionsFile\obj\Debug\Tests_functionsFile.pdb

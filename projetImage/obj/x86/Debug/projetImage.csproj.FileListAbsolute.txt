@@ -21,3 +21,27 @@ C:\Users\Administrator\Desktop\projetImage\projetImage\bin\Debug\projetImage.exe
 C:\Users\Administrator\Desktop\projetImage\projetImage\bin\Debug\projetImage.pdb
 C:\Users\Administrator\Desktop\projetImage\projetImage\obj\x86\Debug\projetImage.exe
 C:\Users\Administrator\Desktop\projetImage\projetImage\obj\x86\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\bin\Debug\projetImage.exe.config
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\bin\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form1.resources
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form2.resources
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form_enterName.resources
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Properties.Resources.resources
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\bin\Debug\projetImage.exe.config
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.exe
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form1.resources
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form2.resources
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Form_enterName.resources
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\projetImage.Properties.Resources.resources
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\bin\Debug\projetImage.pdb

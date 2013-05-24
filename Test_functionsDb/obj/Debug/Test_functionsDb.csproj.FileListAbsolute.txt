@@ -7,3 +7,19 @@ C:\Users\Administrator\Desktop\projetImage\Test_functionsDb\bin\Debug\projetImag
 C:\Users\Administrator\Desktop\projetImage\Test_functionsDb\bin\Debug\NSubstitute.xml
 C:\Users\Administrator\Desktop\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.dll
 C:\Users\Administrator\Desktop\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\bin\Debug\Test_functionsDb.dll
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\bin\Debug\Test_functionsDb.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\bin\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\bin\Debug\NSubstitute.xml
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\obj\Debug\Test_functionsDb.dll
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNoveau\Test_functionsDb\obj\Debug\Test_functionsDb.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\bin\Debug\Test_functionsDb.dll
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\bin\Debug\Test_functionsDb.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\bin\Debug\projetImage.exe
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\bin\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\bin\Debug\NSubstitute.xml
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\obj\Debug\Test_functionsDb.dll
+C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\Test_functionsDb\obj\Debug\Test_functionsDb.pdb

@@ -37,12 +37,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button_createSketch = new System.Windows.Forms.Button();
-            this.button_loadSketch = new System.Windows.Forms.Button();
-            this.textBox_db = new System.Windows.Forms.TextBox();
-            this.button_saveSketch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_saveSketch = new System.Windows.Forms.Button();
+            this.textBox_db = new System.Windows.Forms.TextBox();
+            this.button_loadSketch = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonLineColor = new System.Windows.Forms.Button();
+            this.buttonSizeLine = new System.Windows.Forms.Button();
+            this.buttonDrawLine = new System.Windows.Forms.Button();
+            this.button_createSketch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,7 +69,9 @@
             this.pictureBox1.Size = new System.Drawing.Size(518, 446);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // textBox1
             // 
@@ -140,41 +145,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DB access";
             // 
-            // groupBox3
+            // label2
             // 
-            this.groupBox3.Controls.Add(this.button_createSketch);
-            this.groupBox3.Location = new System.Drawing.Point(621, 361);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(336, 97);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Sketch";
-            // 
-            // button_createSketch
-            // 
-            this.button_createSketch.Location = new System.Drawing.Point(12, 31);
-            this.button_createSketch.Name = "button_createSketch";
-            this.button_createSketch.Size = new System.Drawing.Size(98, 23);
-            this.button_createSketch.TabIndex = 0;
-            this.button_createSketch.Text = "Create a sketch";
-            this.button_createSketch.UseVisualStyleBackColor = true;
-            this.button_createSketch.Click += new System.EventHandler(this.button_createSketch_Click);
-            // 
-            // button_loadSketch
-            // 
-            this.button_loadSketch.Location = new System.Drawing.Point(106, 19);
-            this.button_loadSketch.Name = "button_loadSketch";
-            this.button_loadSketch.Size = new System.Drawing.Size(86, 23);
-            this.button_loadSketch.TabIndex = 1;
-            this.button_loadSketch.Text = "Load  sketch";
-            this.button_loadSketch.UseVisualStyleBackColor = true;
-            // 
-            // textBox_db
-            // 
-            this.textBox_db.Location = new System.Drawing.Point(106, 87);
-            this.textBox_db.Name = "textBox_db";
-            this.textBox_db.Size = new System.Drawing.Size(187, 20);
-            this.textBox_db.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Name : ";
             // 
             // button_saveSketch
             // 
@@ -185,14 +163,73 @@
             this.button_saveSketch.Text = "Save sketch";
             this.button_saveSketch.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // textBox_db
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Name : ";
+            this.textBox_db.Location = new System.Drawing.Point(106, 87);
+            this.textBox_db.Name = "textBox_db";
+            this.textBox_db.Size = new System.Drawing.Size(187, 20);
+            this.textBox_db.TabIndex = 6;
+            // 
+            // button_loadSketch
+            // 
+            this.button_loadSketch.Location = new System.Drawing.Point(106, 19);
+            this.button_loadSketch.Name = "button_loadSketch";
+            this.button_loadSketch.Size = new System.Drawing.Size(86, 23);
+            this.button_loadSketch.TabIndex = 1;
+            this.button_loadSketch.Text = "Load  sketch";
+            this.button_loadSketch.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonLineColor);
+            this.groupBox3.Controls.Add(this.buttonSizeLine);
+            this.groupBox3.Controls.Add(this.buttonDrawLine);
+            this.groupBox3.Controls.Add(this.button_createSketch);
+            this.groupBox3.Location = new System.Drawing.Point(621, 361);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(336, 97);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Sketch";
+            // 
+            // buttonLineColor
+            // 
+            this.buttonLineColor.Location = new System.Drawing.Point(12, 68);
+            this.buttonLineColor.Name = "buttonLineColor";
+            this.buttonLineColor.Size = new System.Drawing.Size(75, 23);
+            this.buttonLineColor.TabIndex = 3;
+            this.buttonLineColor.Text = "Color";
+            this.buttonLineColor.UseVisualStyleBackColor = true;
+            // 
+            // buttonSizeLine
+            // 
+            this.buttonSizeLine.Location = new System.Drawing.Point(240, 31);
+            this.buttonSizeLine.Name = "buttonSizeLine";
+            this.buttonSizeLine.Size = new System.Drawing.Size(75, 23);
+            this.buttonSizeLine.TabIndex = 2;
+            this.buttonSizeLine.Text = "Size";
+            this.buttonSizeLine.UseVisualStyleBackColor = true;
+            this.buttonSizeLine.Click += new System.EventHandler(this.buttonSizeLine_Click);
+            // 
+            // buttonDrawLine
+            // 
+            this.buttonDrawLine.Location = new System.Drawing.Point(136, 31);
+            this.buttonDrawLine.Name = "buttonDrawLine";
+            this.buttonDrawLine.Size = new System.Drawing.Size(75, 23);
+            this.buttonDrawLine.TabIndex = 1;
+            this.buttonDrawLine.Text = "drawLine";
+            this.buttonDrawLine.UseVisualStyleBackColor = true;
+            this.buttonDrawLine.Click += new System.EventHandler(this.buttonDrawLine_Click);
+            // 
+            // button_createSketch
+            // 
+            this.button_createSketch.Location = new System.Drawing.Point(12, 31);
+            this.button_createSketch.Name = "button_createSketch";
+            this.button_createSketch.Size = new System.Drawing.Size(98, 23);
+            this.button_createSketch.TabIndex = 0;
+            this.button_createSketch.Text = "Create a sketch";
+            this.button_createSketch.UseVisualStyleBackColor = true;
+            this.button_createSketch.Click += new System.EventHandler(this.button_createSketch_Click);
             // 
             // Form1
             // 
@@ -235,6 +272,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_saveSketch;
         private System.Windows.Forms.TextBox textBox_db;
+        private System.Windows.Forms.Button buttonLineColor;
+        private System.Windows.Forms.Button buttonSizeLine;
+        private System.Windows.Forms.Button buttonDrawLine;
     }
 }
 

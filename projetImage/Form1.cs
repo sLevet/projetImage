@@ -21,10 +21,18 @@ namespace projetImage
         //*****************************************************
         private FunctionsFile fFile ;       // save / load in files
         private FunctionsDb fDb;            // save / load in Db
+        private FunctionsImage fImage;      // draw / save sketchs
         private int widthPBox1;             // fix picture box size
         private int heightPBox1;
         private int currentIdPicture;       // used for db access and check
         private int currentIdSketch;        // used for db access and check
+        private Color color = Color.Black;  //Default color black
+        Image Second = null;                //
+        Image Original = null;              //
+        private bool draw = false;          // boolean to know if we are drawing something
+        private int s = 3;
+        int SecondPicLineWidth;
+
         // constructor
         public Form1()
         {
@@ -177,10 +185,10 @@ namespace projetImage
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+      /*  private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
         private void button_createSketch_Click(object sender, EventArgs e)
         {
@@ -191,10 +199,72 @@ namespace projetImage
                 return;
             }
             MessageBox.Show("This part is for you Soraia :)) "+currentIdPicture);
+
         }
 
-     
-       
+        //draw when mouse moves down
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Original = pictureBox1.Image;
+            Second = pictureBox1.Image;
+            draw = true;
+            Graphics g = Graphics.FromImage(Second);
+            Pen pen1 = new Pen(color, 4);
+            g.DrawRectangle(pen1, e.X, e.Y, 2, 2);
+            g.Save();
+            pictureBox1.Image = Second;
+
+        }
+
+        //draw when mouse moves up
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            draw = false;
+
+        }
+
+        //Look if we are drawing something
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (draw)
+            {
+                Graphics g = Graphics.FromImage(Second);
+                SolidBrush brush = new SolidBrush(color);
+                g.FillRectangle(brush, e.X, e.Y, s, s);
+                g.Save();
+                pictureBox1.Image = Second;
+            }
+
+        }
+
+        private void buttonSizeLine_Click(object sender, EventArgs e)
+        {
+            fImage.OpenFormLineSize();
+           // OpenFormLineSize();
+        }
+
+        private void buttonDrawLine_Click(object sender, EventArgs e)
+        {
+           // fImage.
+        }
+
+        private void buttonDrawLine_Click()
+        {
+
+        }
+
+        private void buttonSizeLine_Click()
+        {
+
+        }
+        /*public void OpenFormLineSize()
+        {
+            FormSize fs = new FormSize();
+            fs.Size = 1;
+            fs.StartPosition = FormStartPosition.CenterScreen;
+            fs.ShowDialog();
+            SecondPicLineWidth = fs.Size;
+        }*/
         
     }
 }
