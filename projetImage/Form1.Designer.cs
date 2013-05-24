@@ -46,6 +46,7 @@
             this.buttonSizeLine = new System.Windows.Forms.Button();
             this.buttonDrawLine = new System.Windows.Forms.Button();
             this.button_createSketch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -231,11 +232,22 @@
             this.button_createSketch.UseVisualStyleBackColor = true;
             this.button_createSketch.Click += new System.EventHandler(this.button_createSketch_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(761, 305);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 504);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
@@ -275,6 +287,7 @@
         private System.Windows.Forms.Button buttonLineColor;
         private System.Windows.Forms.Button buttonSizeLine;
         private System.Windows.Forms.Button buttonDrawLine;
+        private System.Windows.Forms.Button button1;
     }
 }
 
