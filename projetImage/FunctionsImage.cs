@@ -48,6 +48,14 @@ namespace projetImage
             }
         }
 
+        public void OpenFormLineColor()
+        {
+            ColorDialog CD = new ColorDialog();
+            CD.ShowDialog();
+            Color newC = CD.Color;
+            SecondPicBrush = newC;
+        }
+
         
         public void Panel1_MouseDown(object sender, MouseEventArgs e)
         {

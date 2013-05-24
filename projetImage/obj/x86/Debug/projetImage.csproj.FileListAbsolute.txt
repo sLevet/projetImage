@@ -72,3 +72,6 @@ C:\Users\Administrator\Desktop\projetImage4\projetImage\projetImage\obj\x86\Debu
 C:\Users\Administrator\Desktop\projetImage4\projetImage\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Administrator\Desktop\projetImage4\projetImage\projetImage\obj\x86\Debug\projetImage.exe
 C:\Users\Administrator\Desktop\projetImage4\projetImage\projetImage\obj\x86\Debug\projetImage.pdb
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\projetImage\bin\Debug\projetImage.exe.config
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\projetImage\obj\x86\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\projetImage\obj\x86\Debug\projetImage.pdb

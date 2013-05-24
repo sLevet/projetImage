@@ -295,16 +295,17 @@ namespace projetImage
              * */
         }
 
-        
 
-        /*public void OpenFormLineSize()
+
+        private void buttonLineColor_Click(object sender, EventArgs e)
         {
-            FormSize fs = new FormSize();
-            fs.Size = 1;
-            fs.StartPosition = FormStartPosition.CenterScreen;
-            fs.ShowDialog();
-            SecondPicLineWidth = fs.Size;
-        }*/
+            if (!checkPicture(pictureBox1.Image))
+            {
+                MessageBox.Show("Load picture first !");
+                return;
+            }
+            fImage.OpenFormLineColor();
+        }
         
     }
 }
