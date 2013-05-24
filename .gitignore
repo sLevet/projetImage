@@ -146,3 +146,4 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+/Test_functionsDb/bin/Debug
