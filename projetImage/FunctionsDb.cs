@@ -25,6 +25,7 @@ namespace projetImage
         private string connectString = "Data Source=WIN-GS9GMUJITS8;Initial Catalog=BDPicture;Integrated Security=True";    // path for DB
         private string query;           // query for sql request
         private SqlDataReader rs;
+        private int dbMode;             // used to select query and action in db
         //
         //  Constructor. I use form1 to get/set textbox, pictureBox, .....
         //
@@ -52,13 +53,11 @@ namespace projetImage
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
-
         //
         // Save image in DB
         //
         public int SaveImageInDb()
         {
-           
             byte[] tab = imageToByteArray(form1.getPictureBox().Image);
             SqlConnection cn = new SqlConnection();             // connection for sql
             try
@@ -96,10 +95,19 @@ namespace projetImage
             
         }
         //
-        // Prepare to load a picture from DB. Used to export file
+        // Prepare to load a picture or a sketch from DB. Used to export file
         //
         public void prepareLoadImageFromDb(FunctionsFile fFile)
         {
+            // select query
+            this.dbMode = form1.DBMode;
+            switch (dbMode)
+            {
+                case 3: query = "SELECT name, id FROM T_pictures";
+                    break;
+                case 4: query = "SELECT name, id FROM T_sketch WHERE fk_picture = "+form1.CurrentIdPicture;
+                    break;
+            }
             this.fFile = fFile;
             List<String> listPicturesName = new List<string>();         // store pictures' names and ids
             // first I load and check if pictures are present in DB
@@ -112,7 +120,7 @@ namespace projetImage
                 cn.ConnectionString = connectString;
                 cn.Open();
                 // query and parameters
-                query = "SELECT name, id FROM T_pictures";
+                //query = "SELECT name, id FROM T_pictures";
                 SqlCommand stmt = new SqlCommand(query, cn);
                 rs = stmt.ExecuteReader();
                 while (rs.Read())
@@ -157,13 +165,23 @@ namespace projetImage
         //
         public void loadImageFromDb(string msg)
         {
+            // select query
+            this.dbMode = form1.DBMode;
+            switch (dbMode)
+            {
+                case 3: query = "SELECT pict_field FROM T_pictures WHERE id = @id";
+                    break;
+                case 4: query = "SELECT pict_field FROM T_sketch WHERE id = @id";
+                    break;
+            }
+
             byte[] byteArray = null;
             // extract substring with picture id and cast in int
             string stringIdImage = "";
             int stopPos = msg.IndexOf('_');
             stringIdImage = msg.Substring(0, stopPos);
             int idImage = int.Parse(stringIdImage);
-
+            Console.WriteLine ("**************** : "+idImage+" *****************");
             // connect in DB and load picture in pictureBox
             SqlConnection cn = new SqlConnection();             // connection for sql
             try
@@ -172,7 +190,7 @@ namespace projetImage
                 cn.ConnectionString = connectString;
                 cn.Open();
                 // query and parameters
-                query = "SELECT pict_field FROM T_pictures WHERE id = @id";
+                //query = "SELECT pict_field FROM T_pictures WHERE id = @id";
                 SqlCommand stmt = new SqlCommand(query, cn);
                 stmt.Parameters.AddWithValue("id", idImage);
                 rs = stmt.ExecuteReader();

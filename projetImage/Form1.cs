@@ -19,6 +19,7 @@ namespace projetImage
         //******************************************************
         // vars
         //*****************************************************
+        // stephane part
         private FunctionsFile fFile ;       // save / load in files
         private FunctionsDb fDb;            // save / load in Db
         private FunctionsImage fImage;      // draw / save sketchs
@@ -26,6 +27,9 @@ namespace projetImage
         private int heightPBox1;
         private int currentIdPicture;       // used for db access and check
         private int currentIdSketch;        // used for db access and check
+        private int dBMode;               // used to select query in db fonction
+
+        // Soraia part
         private Color color = Color.Black;  //Default color black
         Image Second = null;                //
         Image Original = null;              //
@@ -39,6 +43,7 @@ namespace projetImage
             InitializeComponent();
             currentIdPicture = -1;  // -1 --> not selected
             currentIdSketch = -1;   // -1 --> not selected
+            dBMode = 1;             // by default 1 --> insert image in db , my  choice
             fFile = new FunctionsFile(this);
             fDb = new FunctionsDb(this);
             widthPBox1 = pictureBox1.Width;
@@ -47,6 +52,11 @@ namespace projetImage
         //****************************************************************
         // Getters and setters
         //****************************************************************
+        public int DBMode
+        {
+            get { return dBMode; }
+            set { dBMode = value; }
+        }
         public int CurrentIdSketch
         {
             get { return currentIdSketch; }
@@ -159,6 +169,7 @@ namespace projetImage
         }
         private void button_saveInDb_Click(object sender, EventArgs e)
         {
+            dBMode = 1;  //  mode save image in Db
             // no name --> end
             if (!checkName(textBox_db.Text))
             {
@@ -175,6 +186,7 @@ namespace projetImage
 
         private void button_loadFromDB_Click(object sender, EventArgs e)
         {
+            dBMode = 3;     // mode load image from db
             fDb.prepareLoadImageFromDb(fFile);
             checkImageDim();
 
@@ -257,6 +269,33 @@ namespace projetImage
         {
 
         }
+
+        private void button_loadSketch_Click(object sender, EventArgs e)
+        {
+            dBMode = 4;     // mode load sketch from db
+            fDb.prepareLoadImageFromDb(fFile);
+        }
+
+        private void button_saveSketch_Click(object sender, EventArgs e)
+        {
+            dBMode = 2;  //  mode save image in Db
+            /*
+            // no name --> end
+            if (!checkName(textBox_db.Text))
+            {
+                return;
+            }
+            // no picture --> end
+            if (!checkPicture(pictureBox1.Image))
+            {
+                return;
+            }
+            currentIdPicture = fDb.SaveImageInDb();
+            textBox_db.Text = "";
+             * */
+        }
+
+        
 
         /*public void OpenFormLineSize()
         {

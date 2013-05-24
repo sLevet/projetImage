@@ -162,6 +162,7 @@
             this.button_saveSketch.TabIndex = 7;
             this.button_saveSketch.Text = "Save sketch";
             this.button_saveSketch.UseVisualStyleBackColor = true;
+            this.button_saveSketch.Click += new System.EventHandler(this.button_saveSketch_Click);
             // 
             // textBox_db
             // 
@@ -178,6 +179,7 @@
             this.button_loadSketch.TabIndex = 1;
             this.button_loadSketch.Text = "Load  sketch";
             this.button_loadSketch.UseVisualStyleBackColor = true;
+            this.button_loadSketch.Click += new System.EventHandler(this.button_loadSketch_Click);
             // 
             // groupBox3
             // 

@@ -31,3 +31,10 @@ C:\Users\Administrator\Desktop\newProjectImage\projetImage\Test_functionsDb\bin\
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\Test_functionsDb\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.dll
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.pdb
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\bin\Debug\Test_functionsDb.dll
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\bin\Debug\Test_functionsDb.pdb
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\bin\Debug\projetImage.exe
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\bin\Debug\projetImage.pdb
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.dll
+C:\Users\Administrator\Desktop\projetImage4\projetImage\Test_functionsDb\obj\Debug\Test_functionsDb.pdb
