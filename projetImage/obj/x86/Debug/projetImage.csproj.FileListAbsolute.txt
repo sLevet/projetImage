@@ -45,3 +45,15 @@ C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projet
 C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\bin\Debug\projetImage.exe
 C:\Users\Soraia\Documents\Organisation du developpement\projetImageNoveau\projetImage\bin\Debug\projetImage.pdb
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\bin\Debug\projetImage.exe.config
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.exe
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.pdb
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\bin\Debug\projetImage.exe
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\bin\Debug\projetImage.pdb
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.Form1.resources
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.Form2.resources
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.Form_enterName.resources
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.Properties.Resources.resources
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
