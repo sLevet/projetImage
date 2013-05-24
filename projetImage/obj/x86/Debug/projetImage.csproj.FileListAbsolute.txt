@@ -57,3 +57,6 @@ C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\D
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\projetImage.Properties.Resources.resources
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Administrator\Desktop\newProjectImage\projetImage\projetImage\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\bin\Debug\projetImage.exe.config
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\obj\x86\Debug\projetImage.exe
+C:\Users\Soraia\Documents\projetStephSoraia\projetImageNew\projetImage\obj\x86\Debug\projetImage.pdb
